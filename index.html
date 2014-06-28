@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="15-puzzles game">
+    <meta name="author" content="Oleksandr Telnov">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
     <title>15-puzzles</title>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,35 +24,50 @@
   </head>
   <body>
     <div class="container">
-      <div class="row text-center">
-        <h1>15-puzzles</h1>
-        <div class="field">
-          <div class="row">
-            <div class="col-xs-3 cell" id="1"></div>
-            <div class="col-xs-3 cell" id="2"></div>
-            <div class="col-xs-3 cell" id="3"></div>
-            <div class="col-xs-3 cell" id="4"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-3 cell" id="5"></div>
-            <div class="col-xs-3 cell" id="6"></div>
-            <div class="col-xs-3 cell" id="7"></div>
-            <div class="col-xs-3 cell" id="8"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-3 cell" id="9"></div>
-            <div class="col-xs-3 cell" id="10"></div>
-            <div class="col-xs-3 cell" id="11"></div>
-            <div class="col-xs-3 cell" id="12"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-3 cell" id="13"></div>
-            <div class="col-xs-3 cell" id="14"></div>
-            <div class="col-xs-3 cell" id="15"></div>
-            <div class="col-xs-3 cell" id="16"></div>
-          </div>
-          <i><h4 class="row" id="mess"></h4></i>
-        </div>
+      <div class="row">
+        <h1 class="text-center">15-puzzles</h1>
+          <div class="col-sm-6 col-xs-12 text-center">
+	        <div class="field pull-right">
+	          <div class="row">
+	            <div class="col-xs-3 cell" id="1"></div>
+	            <div class="col-xs-3 cell" id="2"></div>
+	            <div class="col-xs-3 cell" id="3"></div>
+	            <div class="col-xs-3 cell" id="4"></div>
+	          </div>
+	          <div class="row">
+	            <div class="col-xs-3 cell" id="5"></div>
+	            <div class="col-xs-3 cell" id="6"></div>
+	            <div class="col-xs-3 cell" id="7"></div>
+	            <div class="col-xs-3 cell" id="8"></div>
+	          </div>
+	          <div class="row">
+	            <div class="col-xs-3 cell" id="9"></div>
+	            <div class="col-xs-3 cell" id="10"></div>
+	            <div class="col-xs-3 cell" id="11"></div>
+	            <div class="col-xs-3 cell" id="12"></div>
+	          </div>
+	          <div class="row">
+	            <div class="col-xs-3 cell" id="13"></div>
+	            <div class="col-xs-3 cell" id="14"></div>
+	            <div class="col-xs-3 cell" id="15"></div>
+	            <div class="col-xs-3 cell" id="16"></div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="col-sm-5 col-xs-12">
+	      	<div class="stats">
+	      		<ul>
+	      			<li><b>Rules:</b></li>
+	      			<li>The 15-puzzle is a sliding puzzle that consists of a frame of numbered square tiles in random order with one tile missing. The object of the puzzle is to place the tiles in order by making sliding moves that use the empty space - <a href="http://en.wikipedia.org/wiki/15_puzzle" target="_blank">wikipedia.</a></li>
+	      			<li class="li"><b>Help:</b></li>
+	      			<li>Click on tile, which you want to move.</li>
+	      			<li class="li"><b>Your Turns:</b></li>
+	      			<li id="turns">0</li>
+	      			<li class="li"><b>Notifications:</b></li>
+	      			<li><i id="mess">Слава Україні!</i></li>
+	      		</ul>
+	      	</div>
+	      </div>
       </div>
     </div>
   </body>

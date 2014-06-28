@@ -1,5 +1,6 @@
 $(function(){
 	var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,'empty'];
+	var turns = 0;
 	$.each($('.cell'), function( key, value ) {
 		var random = array[Math.floor(Math.random()*array.length)];
 		if (random == 'empty'){
@@ -27,7 +28,7 @@ $(function(){
 	}
 
 	$('.cell').on('click', function(){
-		$('#mess').text('');
+		$('#mess').text('Путін Хуйло!').removeClass('err');
 		var empty = $('.empty').attr('id');
 		var id = $(this).attr('id');
 		var action = false;
@@ -113,7 +114,6 @@ $(function(){
 		      }
 		      break
 		   default:
-		     
 		      break
 		}
 
@@ -121,6 +121,8 @@ $(function(){
 			$('.empty').text($('#'+id).text());
 			$('.empty').removeClass('empty');
 			$('#'+id).text('').addClass('empty');
+			turns++;
+			$('#turns').text(turns);
 		}else{
 			$('#mess').text('No move!').addClass('err');
 		}

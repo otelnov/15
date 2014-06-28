@@ -24,8 +24,28 @@ h1{padding-bottom: 30px;}
 	width: 300px;
 }
 
+.stats{padding-left: 50px;}
+
+@media (max-width: 767px) {
+  .field{
+  	float:none !important;
+  	padding-left: 10px;
+  }
+  .stats{
+  	margin: 50px auto;
+  	max-width: 450px;
+  	padding-left: 0px;
+  }
+  h1{padding-bottom: 20px;}
+  body{padding-top: 15px;}
+}
+
 .err{color:#FF8080;}
 
 .info{color:#6AFA6A;}
 
 #mess{margin-top: 15px;}
+
+ul{list-style-type: none;}
+
+.li{margin-top: 7px;}

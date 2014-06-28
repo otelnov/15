@@ -1,0 +1,31 @@
+body{
+	padding-top: 25px;
+	background: url('../img/irongrip.png');
+	color: #f5f5f5;
+}
+
+.cell{
+	height: 70px;
+	width: 70px;
+	background: url('../img/kindajean.png');
+	margin: 5px 5px;
+	color: #555;
+	font-size: 28px;
+	padding-top: 15px;
+	cursor: pointer;
+}
+
+.cell.empty{background: url('../img/irongrip.png');}
+
+h1{padding-bottom: 30px;}
+
+.field{
+	margin: 0 auto;
+	width: 300px;
+}
+
+.err{color:#FF8080;}
+
+.info{color:#6AFA6A;}
+
+#mess{margin-top: 15px;}

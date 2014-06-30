@@ -27,6 +27,61 @@ $(function(){
 		return res;
 	}
 
+	function move(action,id){
+		if(action){
+			$('.empty').text($('#'+id).text());
+			$('.empty').removeClass('empty');
+			$('#'+id).text('').addClass('empty');
+			turns++;
+			$('#turns').text(turns);
+			
+			if(checkPos()){
+				$('#mess').text('You win!').addClass('info');	
+			}
+		}else{
+			$('#mess').text('No move!').addClass('err');
+		}
+	}
+
+	$(document).keydown(function(e) {
+	  $('#mess').text('Путін Хуйло!').removeClass('err');
+	  var action = true;
+	  var id;
+	  switch(e.which) {
+	    case 37: // left
+	      id = $('.empty').attr('id')*1+1;
+	      if(id%4 == 1){
+	  		action = false;
+	  	  }
+	    break;
+	    case 38: // up
+	      id = $('.empty').attr('id')*1+4;
+	      if($('.empty').attr('id')*1 > 12 && $('.empty').attr('id')*1 < 17){
+	      	action = false;
+	      }
+	    break;
+	    case 39: // right
+	      id = $('.empty').attr('id')*1-1;
+	      if(id%4 == 0){
+	  		action = false;
+	  	  }
+	    break;
+	    case 40: // down
+	      id = $('.empty').attr('id')*1-4;
+	      if($('.empty').attr('id')*1 > 0 && $('.empty').attr('id')*1 < 5){
+	      	action = false;
+	      }
+	    break;
+	    default: return;
+	  }
+	  e.preventDefault();
+
+
+	  move(action, id);
+	
+	});
+	
+	
 	$('.cell').on('click', function(){
 		$('#mess').text('Путін Хуйло!').removeClass('err');
 		var empty = $('.empty').attr('id');
@@ -117,19 +172,7 @@ $(function(){
 		      break
 		}
 
-		if(action){
-			$('.empty').text($('#'+id).text());
-			$('.empty').removeClass('empty');
-			$('#'+id).text('').addClass('empty');
-			turns++;
-			$('#turns').text(turns);
-		}else{
-			$('#mess').text('No move!').addClass('err');
-		}
-
-		if(checkPos()){
-			$('#mess').text('You win!').addClass('info');	
-		}
+		move(action,id);
 
 	});
 	

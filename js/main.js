@@ -81,7 +81,7 @@ $(function(){
 	
 	});
 
-	$("body").swipe({
+	$(".field").swipe({
       swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
           $('#mess').text('Путін Хуйло!').removeClass('err');
 		  var action = true;

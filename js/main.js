@@ -80,6 +80,42 @@ $(function(){
 	  move(action, id);
 	
 	});
+
+	$("body").swipe({
+      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+          $('#mess').text('Путін Хуйло!').removeClass('err');
+		  var action = true;
+		  var id;
+		  switch(direction) {
+		    case 'left':
+		      id = $('.empty').attr('id')*1+1;
+		      if(id%4 == 1){
+		  		action = false;
+		  	  }
+		    break;
+		    case 'up':
+		      id = $('.empty').attr('id')*1+4;
+		      if($('.empty').attr('id')*1 > 12 && $('.empty').attr('id')*1 < 17){
+		      	action = false;
+		      }
+		    break;
+		    case 'right':
+		      id = $('.empty').attr('id')*1-1;
+		      if(id%4 == 0){
+		  		action = false;
+		  	  }
+		    break;
+		    case 'down':
+		      id = $('.empty').attr('id')*1-4;
+		      if($('.empty').attr('id')*1 > 0 && $('.empty').attr('id')*1 < 5){
+		      	action = false;
+		      }
+		    break;
+		    default: return;
+		  }
+		  move(action, id);
+	  },threshold:0
+    });
 	
 	
 	$('.cell').on('click', function(){
